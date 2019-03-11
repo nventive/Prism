@@ -121,7 +121,7 @@ namespace Prism
                 OnStart(startArgs);
                 _logger.Log($"[App.OnStartAsync(startKind:{startArgs.StartKind}, startCause:{startArgs.StartCause})]", Category.Info, Priority.None);
                 await OnStartAsync(startArgs);
-                Window.Current.Activate();
+                Windows.UI.Xaml.Window.Current.Activate();
             }
             catch (Exception ex)
             {

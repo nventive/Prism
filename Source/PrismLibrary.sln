@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2020
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28701.123
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prism", "Prism\Prism.csproj", "{6D4EACA5-275A-495F-A042-BB91247FDE50}"
 EndProject
@@ -66,6 +66,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prism.Ninject.Wpf.Tests", "Wpf\Prism.Ninject.Wpf.Tests\Prism.Ninject.Wpf.Tests.csproj", "{E20AAE94-4851-4BAB-A0D3-66FBBFFD6531}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prism.DryIoc.Windows", "Windows10\Prism.DryIoc.Windows\Prism.DryIoc.Windows.csproj", "{1691BA2E-8DE6-4FF4-9970-5E3F5813149A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prism.Uno", "Windows10\Prism.Uno\Prism.Uno.csproj", "{C4C34D36-A216-4CE4-A688-A1484B20E772}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -423,6 +425,22 @@ Global
 		{1691BA2E-8DE6-4FF4-9970-5E3F5813149A}.Release|x64.Build.0 = Release|Any CPU
 		{1691BA2E-8DE6-4FF4-9970-5E3F5813149A}.Release|x86.ActiveCfg = Release|Any CPU
 		{1691BA2E-8DE6-4FF4-9970-5E3F5813149A}.Release|x86.Build.0 = Release|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Debug|ARM.Build.0 = Debug|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Debug|x64.Build.0 = Debug|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Debug|x86.Build.0 = Debug|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Release|ARM.ActiveCfg = Release|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Release|ARM.Build.0 = Release|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Release|x64.ActiveCfg = Release|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Release|x64.Build.0 = Release|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Release|x86.ActiveCfg = Release|Any CPU
+		{C4C34D36-A216-4CE4-A688-A1484B20E772}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -455,6 +473,7 @@ Global
 		{CCE50109-7ED2-4D7D-948F-6CB36AD767DB} = {2556BF50-B8A0-4F08-8309-FE53A1B9EFC6}
 		{E20AAE94-4851-4BAB-A0D3-66FBBFFD6531} = {AD25EEBB-B23F-4238-BF4B-0E3199142E7F}
 		{1691BA2E-8DE6-4FF4-9970-5E3F5813149A} = {785CEF4D-2A96-4B25-91A9-3C18EF055223}
+		{C4C34D36-A216-4CE4-A688-A1484B20E772} = {785CEF4D-2A96-4B25-91A9-3C18EF055223}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A6B5A49-790C-425F-BBF5-99D104959C33}
