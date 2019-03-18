@@ -3,7 +3,9 @@ using SampleData.StarTrek;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Windows.Storage;
 
@@ -72,6 +74,7 @@ namespace SampleData.StarTrek
 
             async Task<JsonRoot> ReadJson()
             {
+#if false
                 try
                 {
                     var path = new Uri("ms-appx:///SampleData/StarTrek/Data.json");
@@ -84,6 +87,18 @@ namespace SampleData.StarTrek
                     Debugger.Break();
                     throw;
                 }
+#else
+                var resName = this.GetType().GetTypeInfo().Assembly.GetManifestResourceNames().FirstOrDefault(s => s.EndsWith("data.json", StringComparison.OrdinalIgnoreCase));
+
+                if(resName != null)
+                {
+                    var s = new StreamReader(this.GetType().GetTypeInfo().Assembly.GetManifestResourceStream(resName));
+
+                    return JsonConvert.DeserializeObject<JsonRoot>(s.ReadToEnd());
+                }
+
+                throw new NotImplementedException($"Unable to find data.json in the resources");
+#endif
             }
         }
     }

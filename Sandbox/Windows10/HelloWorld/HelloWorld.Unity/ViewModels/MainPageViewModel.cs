@@ -10,7 +10,7 @@ using Windows.UI.Xaml.Media.Animation;
 
 namespace Sample.ViewModels
 {
-    class MainPageViewModel : BindableBase, INavigatedAwareAsync
+    public class MainPageViewModel : BindableBase, INavigatedAwareAsync
     {
         private static readonly Database _data;
 
@@ -69,6 +69,8 @@ namespace Sample.ViewModels
                     .Where(x => x.Show == show.Abbreviation)
                     .Where(x => x.Character.ToLower().Contains(SearchString.Trim().ToLower()) || x.Actor.ToLower().Contains(SearchString.Trim().ToLower()));
             }
+
+            System.Console.WriteLine($"Got {Members.Count} members");
         }
 
         public async void ItemClick(object sender, Windows.UI.Xaml.Controls.ItemClickEventArgs e)

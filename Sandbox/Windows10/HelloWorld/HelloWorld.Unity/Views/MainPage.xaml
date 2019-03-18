@@ -28,12 +28,13 @@
         <AppBarButton Label="Info" Icon="World" AccessKey="i" />
     </CommandBar>
 </Page.TopAppBar>
+  <Grid>
 
-    <GridView ItemsSource="{Binding Source={StaticResource cvs}}" IsItemClickEnabled="True" ItemClick="{x:Bind ViewModel.ItemClick}">
-        <GridView.GroupStyle>
+    <ListView ItemsSource="{Binding Source={StaticResource cvs}}" IsItemClickEnabled="True" ItemClick="{x:Bind ViewModel.ItemClick}">
+        <ListView.GroupStyle>
             <GroupStyle>
                 <GroupStyle.HeaderContainerStyle>
-                    <Style TargetType="GridViewHeaderItem">
+                    <Style TargetType="ListViewHeaderItem">
                         <Setter Property="Margin" Value="-12,0,0,0" />
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                     </Style>
@@ -54,14 +55,14 @@
                     </Style>
                 </GroupStyle.ContainerStyle>
             </GroupStyle>
-        </GridView.GroupStyle>
-        <GridView.ItemContainerStyle>
-            <Style TargetType="GridViewItem">
+        </ListView.GroupStyle>
+        <ListView.ItemContainerStyle>
+            <Style TargetType="ListViewItem">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                 <Setter Property="VerticalContentAlignment" Value="Stretch" />
             </Style>
-        </GridView.ItemContainerStyle>
-        <GridView.ItemTemplate>
+        </ListView.ItemContainerStyle>
+        <ListView.ItemTemplate>
             <DataTemplate x:DataType="models:Member">
                 <Grid Height="250" Width="200">
                     <Grid.Background>
@@ -76,7 +77,17 @@
                     </StackPanel>
                 </Grid>
             </DataTemplate>
-        </GridView.ItemTemplate>
-    </GridView>
+        </ListView.ItemTemplate>
+    </ListView>
 
+    <TextBlock>
+      <Run Text="{Binding Source={StaticResource cvs}}" />
+      -
+      <Run Text="{x:Bind }" />
+      -
+      <Run Text="{x:Bind ViewModel}" />
+      -
+      <Run Text="{x:Bind ViewModel.Members}" />
+    </TextBlock>
+  </Grid>
 </Page>

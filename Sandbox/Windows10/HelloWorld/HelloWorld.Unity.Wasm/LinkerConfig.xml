@@ -1,0 +1,16 @@
+﻿<linker>
+  <assembly fullname="HelloWorld.Unity.Wasm" />
+  <assembly fullname="SampleData" />
+  <assembly fullname="Uno.Foundation" />
+
+  <assembly fullname="Prism.Unity.Uno"/>
+  <assembly fullname="Prism.Uno"/>
+  <assembly fullname="Unity.Abstractions"/>
+  <assembly fullname="Unity.Container"/>
+  <assembly fullname="Prism"/>
+
+  <assembly fullname="System.Core">
+	<!-- This is required by JSon.NET and any expression.Compile caller -->
+	<type fullname="System.Linq.Expressions*" />
+  </assembly>
+</linker>
