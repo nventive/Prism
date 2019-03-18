@@ -218,7 +218,11 @@ namespace Prism.Navigation
             catch (Exception ex)
             {
                 _logger.Log($"Navigation error: {ex.Message}", Category.Exception, Priority.High);
+
+#if !__WASM__
                 Debugger.Break();
+#endif
+
                 throw;
             }
         }

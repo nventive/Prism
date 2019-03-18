@@ -126,7 +126,9 @@ namespace Prism
             catch (Exception ex)
             {
                 _logger.Log($"ERROR {ex.Message}", Category.Exception, Priority.High);
+#if !__WASM__
                 Debugger.Break();
+#endif
             }
             finally
             {

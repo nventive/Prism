@@ -22,6 +22,10 @@
     <VersionSuffix Condition=" '$(PRISM_RELEASE)' == '' And '$(PRISM_WINDOWS_VERSION)' == '' And '$(IS_PREVIEW)' ">pre</VersionSuffix>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\Prism\Prism.csproj" />
   </ItemGroup>

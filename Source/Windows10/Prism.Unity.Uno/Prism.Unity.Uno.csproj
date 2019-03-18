@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="MSBuild.Sdk.Extras">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;xamarinios10;monoandroid80</TargetFrameworks>
+    <Title>Unity for Prism for the Uno Platform</Title>
+    <DebugType>pdbonly</DebugType>
+    <!-- Summary is not actually supported at this time. Including the summary for future support. -->
+    <!--<Summary>Prism for Xamarin.Forms helps you more easily design and build rich, flexible, and easy to maintain Xamarin.Forms applications.</Summary>-->
+    <Description>Prism provides an implementation of a collection of design patterns that are helpful in writing well structured and maintainable XAML applications, including MVVM, dependency injection, commanding, event aggregation, and more. Prism's core functionality is a shared code base in a Portable Class Library targeting these platforms; WPF, Windows 10 UWP, and Xamarin Forms. Features that need to be platform specific are implemented in the respective libraries for the target platform. Prism for UWP helps you more easily design and build rich, flexible, and easy to maintain UWP applications.</Description>
+    <PackageTags>prism;win10;mvvm;uwp;unity;</PackageTags>
+    <Version Condition=" '$(PRISM_RELEASE)' != '' ">$(PRISM_RELEASE)</Version>
+    <Version Condition=" '$(PRISM_UNITY_WINDOWS_VERSION)' != '' ">$(PRISM_UNITY_WINDOWS_VERSION)</Version>
+    <!-- Update this version when incrementing Library Versions i.e. 7.1.0, 7.2.0 -->
+    <VersionPrefix Condition=" '$(PRISM_RELEASE)' == '' And '$(PRISM_UNITY_WINDOWS_VERSION)' == '' ">7.1.0</VersionPrefix>
+    <!-- This will create CI builds as 7.0.0.1234-ci -->
+    <VersionPrefix Condition=" '$(PRISM_RELEASE)' == '' And '$(PRISM_UNITY_WINDOWS_VERSION)' == '' And '$(APPVEYOR_BUILD_NUMBER)' != '' ">$(VersionPrefix).$(APPVEYOR_BUILD_NUMBER)</VersionPrefix>
+    <VersionSuffix Condition=" '$(PRISM_RELEASE)' == '' And '$(PRISM_UNITY_WINDOWS_VERSION)' == '' And '$(APPVEYOR_BUILD_NUMBER)' != '' ">ci</VersionSuffix>
+    <!-- This will create CI builds as 7.0.0.1234-ci -->
+    <VersionPrefix Condition=" '$(PRISM_RELEASE)' == '' And '$(PRISM_UNITY_WINDOWS_VERSION)' == '' And '$(BUILD_BUILDID)' != '' ">$(VersionPrefix).$(BUILD_BUILDID)</VersionPrefix>
+    <VersionSuffix Condition=" '$(PRISM_RELEASE)' == '' And '$(PRISM_UNITY_WINDOWS_VERSION)' == '' And '$(BUILD_BUILDID)' != '' And !'$(IS_RELEASE)' ">ci</VersionSuffix>
+    <VersionSuffix Condition=" '$(PRISM_RELEASE)' == '' And '$(PRISM_UNITY_WINDOWS_VERSION)' == '' And '$(IS_PREVIEW)' ">pre</VersionSuffix>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Prism.Unity.Windows\**\*.cs" Exclude="..\Prism.Unity.Windows\obj\**\*.cs;..\Prism.Unity.Windows\bin\**\*.cs" />
+    <EmbeddedResource Include="..\Prism.Unity.Windows\**\*.resx" Exclude="..\Prism.Unity.Windows\obj\**\*.resx;..\Prism.Unity.Windows\bin\**\*.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Uno.UI" Version="1.43.0-dev.965" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Unity.Container" Version="5.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Prism.Uno\Prism.Uno.csproj" />
+  </ItemGroup>
+  
+</Project>
