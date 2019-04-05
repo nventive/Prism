@@ -39,10 +39,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\Prism\Prism.csproj">
-      <Project>{e6c50355-d01e-4caa-884d-d7929861315c}</Project>
-      <Name>Prism</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\Source\Windows10\Prism.Unity.Uno\Prism.Unity.Uno.csproj">
       <Name>Prism.Unity.Uno</Name>
     </ProjectReference>
