@@ -23,12 +23,12 @@
     <RootNamespace>Prism.DryIoc</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(BUILD_REPOSITORY_NAME)'=='Uno.Prism'">
+  <PropertyGroup Condition="'$(BUILD_REPOSITORY_NAME)'=='nventive/Uno.Prism'">
     <PackageId>Uno.Prism.DryIoc.Uno</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="..\Prism.DryIoc.WindowsProperties\Prism.DryIoc.Windows.rd.xml" />
+    <EmbeddedResource Include="..\Prism.DryIoc.Windows\Properties\Prism.DryIoc.Windows.rd.xml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -39,7 +39,7 @@
     <PackageReference Include="Unity.Container" Version="5.8.6" />
   </ItemGroup>
 
-  <PropertyGroup Condition="'$(BUILD_REPOSITORY_NAME)'=='Uno.Prism'">
+  <PropertyGroup Condition="'$(BUILD_REPOSITORY_NAME)'=='nventive/Uno.Prism'">
     <PackageId>Uno.Prism.Unity.Uno</PackageId>
   </PropertyGroup>
 

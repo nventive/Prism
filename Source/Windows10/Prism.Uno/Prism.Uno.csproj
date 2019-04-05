@@ -27,7 +27,7 @@
   </PropertyGroup>
 
   <Choose>
-    <When Condition="'$(BUILD_REPOSITORY_NAME)'=='Uno.Prism'">
+    <When Condition="'$(BUILD_REPOSITORY_NAME)'=='nventive/Uno.Prism'">
       <PropertyGroup>
         <PackageId>Uno.Prism.Uno</PackageId>
       </PropertyGroup>
