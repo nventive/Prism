@@ -1,4 +1,5 @@
-﻿﻿﻿# Prism for the Uno Platform and WinUI 2
+# Prism for the Uno Platform and WinUI 2
+
 This port allows for [Uno-based](https://github.com/unoplatform/Uno) apps to use [Prism](https://github.com/PrismLibrary/Prism) on Windows, iOS, Android and WebAssembly, as well as WinUI 2 based applications.
 
 The following packages are available:
