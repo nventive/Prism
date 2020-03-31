@@ -18,7 +18,7 @@ To start a new Uno project with Prism support, take a look at [this](https://git
 
 ## Contributing to Uno.Prism
 
-The main solution to use is [PrismLibrary_Uno.sln](Sources/PrismLibrary_Uno.sln) with the included samples applications.
+The main solution to use is [PrismLibrary_Uno.sln](Source/PrismLibrary_Uno.sln) with the included samples applications.
 
 # Prism
 
