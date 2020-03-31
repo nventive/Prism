@@ -1,4 +1,5 @@
-﻿using CommonServiceLocator;
+﻿#if !HAS_WINUI
+using CommonServiceLocator;
 using Prism.Events;
 using Prism.Ioc;
 using Prism.Logging;
@@ -9,6 +10,7 @@ using Prism.Regions.Behaviors;
 using Prism.Services.Dialogs;
 using System;
 using System.Linq;
+
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -226,3 +228,4 @@ namespace Prism
         }
     }
 }
+#endif

@@ -1,0 +1,65 @@
+jobs:
+- job: Desktop
+
+  variables:
+    ANDROID_NDK_HOME: C:\Microsoft\AndroidNDK64\android-ndk-r15c
+    ANDROID_NDK_PATH: C:\Microsoft\AndroidNDK64\android-ndk-r15c
+    AndroidNdkDirectory: C:\Microsoft\AndroidNDK64\android-ndk-r15c
+
+  pool:
+    vmImage: 'windows-2019'
+
+  workspace:
+    clean: all
+    
+  steps:
+  - checkout: self
+    clean: true
+    lfs: true
+
+  - task: UseDotNet@2
+    displayName: 'Use .Net Core runtime 2.2.0'
+    inputs:
+      packageType: runtime
+      version: 2.2.0
+
+  - task: nventiveCanaryUpdater@5
+    displayName: 'Canary Update'
+    condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/canaries')
+    inputs:
+      solution: Source/PrismLibrary_Uno.sln
+      branchToMerge: master
+      summaryFile: '$(Build.ArtifactStagingDirectory)/Canary.md'
+      resultFile: '$(Build.ArtifactStagingDirectory)/result.json'
+      nugetUpdaterVersion: 2.0.2
+      packageAuthor: nventive
+
+  - task: GitVersion@5
+    inputs:
+      useConfigFile: true
+      configFilePath: gitversion.yml
+
+  - task: NuGetToolInstaller@0
+    inputs:
+      versionSpec: 4.7.0
+      checkLatest: false
+
+  - task: MSBuild@1
+    inputs:
+      solution: Source/PrismLibrary_Uno.sln
+      msbuildLocationMethod: version
+      msbuildVersion: latest
+      msbuildArchitecture: x86
+      msbuildArguments: /r /p:Configuration=Release "/p:PackageOutputPath=$(build.artifactstagingdirectory)\nuget" "/p:RestoreConfigFile=$(Build.SourcesDirectory)/Source/NuGet.config"
+      clean: false
+      maximumCpuCount: true
+      restoreNugetPackages: false
+      logProjectEvents: false
+      createLogFile: false
+
+  - task: PublishBuildArtifacts@1
+    condition: always()
+    inputs:
+      PathtoPublish: $(build.artifactstagingdirectory)
+      ArtifactName: drop
+      ArtifactType: Container

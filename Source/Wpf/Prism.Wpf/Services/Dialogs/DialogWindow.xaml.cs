@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿#if !HAS_WINUI
+using System.Windows;
 
 namespace Prism.Services.Dialogs
 {
@@ -15,3 +16,4 @@ namespace Prism.Services.Dialogs
         }
     }
 }
+#endif

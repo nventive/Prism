@@ -149,7 +149,10 @@ namespace Prism.Unity
             if (useDefaultConfiguration)
             {
                 RegisterTypeIfMissing(typeof(IDialogService), typeof(DialogService), true);
+
+#if !HAS_WINUI
                 RegisterTypeIfMissing(typeof(IDialogWindow), typeof(DialogWindow), false);
+#endif
 
                 RegisterTypeIfMissing(typeof(IServiceLocator), typeof(UnityServiceLocatorAdapter), true);
                 RegisterTypeIfMissing(typeof(IModuleInitializer), typeof(ModuleInitializer), true);

@@ -4,10 +4,13 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
+#if !HAS_WINUI
 using System.Windows.Markup;
+#endif
 
 [assembly: ComVisible(false)]
 
+#if !HAS_WINUI
 [assembly: CLSCompliant(true)]
 
 // -----  Legacy -----
@@ -24,3 +27,4 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("http://prismlibrary.com/", "Prism.Services.Dialogs")]
 
 
+#endif

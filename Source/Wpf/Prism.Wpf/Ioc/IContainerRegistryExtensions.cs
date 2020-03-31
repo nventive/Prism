@@ -1,9 +1,15 @@
 ﻿using Prism.Mvvm;
 using System;
 
+#if HAS_WINUI
+using _IDialog = Prism.Services.Dialogs.IContentDialog;
+#else
+using _IDialog = Services.Dialogs.IDialogWindow;
+#endif
+
 namespace Prism.Ioc
 {
-    public static class IContainerRegistryExtensions
+    public static partial class IContainerRegistryExtensions
     {
         /// <summary>
         /// Registers an object to be used as a dialog in the IDialogService.
@@ -33,9 +39,9 @@ namespace Prism.Ioc
         /// </summary>
         /// <typeparam name="TWindow">The Type of the Window class that will be used to host dialogs in the IDialogService</typeparam>
         /// <param name="containerRegistry"></param>
-        public static void RegisterDialogWindow<TWindow>(this IContainerRegistry containerRegistry) where TWindow : Services.Dialogs.IDialogWindow
+        public static void RegisterDialogWindow<TWindow>(this IContainerRegistry containerRegistry) where TWindow : _IDialog
         {
-            containerRegistry.Register(typeof(Services.Dialogs.IDialogWindow), typeof(TWindow));
+            containerRegistry.Register(typeof(_IDialog), typeof(TWindow));
         }
 
         /// <summary>
@@ -44,9 +50,9 @@ namespace Prism.Ioc
         /// <typeparam name="TWindow">The Type of the Window class that will be used to host dialogs in the IDialogService</typeparam>
         /// <param name="containerRegistry"></param>
         /// <param name="name">The name of the dialog window</param>
-        public static void RegisterDialogWindow<TWindow>(this IContainerRegistry containerRegistry, string name) where TWindow : Services.Dialogs.IDialogWindow
+        public static void RegisterDialogWindow<TWindow>(this IContainerRegistry containerRegistry, string name) where TWindow : _IDialog
         {
-            containerRegistry.Register(typeof(Services.Dialogs.IDialogWindow), typeof(TWindow), name);
+            containerRegistry.Register(typeof(_IDialog), typeof(TWindow), name);
         }
 
         /// <summary>

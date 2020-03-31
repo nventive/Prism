@@ -4,8 +4,8 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Markup;
 
+#if !HAS_WINUI
 [assembly: CLSCompliant(true)]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -22,7 +22,6 @@ using System.Windows.Markup;
 
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
-
 [assembly:ThemeInfo(
     ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located
                              //(used if a resource is not found in the page, 
@@ -33,4 +32,5 @@ using System.Windows.Markup;
 )]
 
 [assembly: XmlnsDefinition("http://prismlibrary.com/", "Prism.Unity")]
+#endif
 

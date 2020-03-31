@@ -1,5 +1,10 @@
 ﻿using System;
+
+#if HAS_WINUI
+using Windows.UI.Xaml;
+#else
 using System.Windows;
+#endif
 
 namespace Prism.Services.Dialogs
 {
@@ -18,6 +23,7 @@ namespace Prism.Services.Dialogs
             obj.SetValue(WindowStyleProperty, value);
         }
 
+#if !HAS_WINUI
         public static readonly DependencyProperty WindowStartupLocationProperty =
             DependencyProperty.RegisterAttached("WindowStartupLocation", typeof(WindowStartupLocation), typeof(Dialog), new UIPropertyMetadata(WindowStartupLocation.CenterOwner, OnWindowStartupLocationChanged));
 
@@ -36,5 +42,6 @@ namespace Prism.Services.Dialogs
             if (sender is Window window)
                 window.WindowStartupLocation = (WindowStartupLocation)e.NewValue;
         }
+#endif
     }
 }
