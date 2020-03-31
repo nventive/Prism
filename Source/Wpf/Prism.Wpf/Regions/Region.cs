@@ -8,7 +8,16 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
+
+#if HAS_WINUI
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Data;
+#else
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+#endif
 
 namespace Prism.Regions
 {

@@ -12,7 +12,12 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+
+#if HAS_WINUI
+using Windows.UI.Xaml;
+#else
 using System.Windows;
+#endif
 
 namespace Prism.Regions
 {
@@ -43,7 +48,7 @@ namespace Prism.Regions
             "RegionName",
             typeof(string),
             typeof(RegionManager),
-            new PropertyMetadata(OnSetRegionNameCallback));
+            new PropertyMetadata(defaultValue: null, propertyChangedCallback: OnSetRegionNameCallback));
 
         /// <summary>
         /// Sets the <see cref="RegionNameProperty"/> attached property.
@@ -161,7 +166,7 @@ namespace Prism.Regions
         /// Identifies the RegionContext attached property.
         /// </summary>
         public static readonly DependencyProperty RegionContextProperty =
-            DependencyProperty.RegisterAttached("RegionContext", typeof(object), typeof(RegionManager), new PropertyMetadata(OnRegionContextChanged));
+            DependencyProperty.RegisterAttached("RegionContext", typeof(object), typeof(RegionManager), new PropertyMetadata(defaultValue: null, propertyChangedCallback: OnRegionContextChanged));
 
         private static void OnRegionContextChanged(DependencyObject depObj, DependencyPropertyChangedEventArgs e)
         {
@@ -232,7 +237,11 @@ namespace Prism.Regions
 
         private static bool IsInDesignMode(DependencyObject element)
         {
+#if HAS_WINUI
+            return false;
+#else
             return DesignerProperties.GetIsInDesignMode(element);
+#endif
         }
 
         #endregion

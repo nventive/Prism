@@ -1,3 +1,4 @@
+#if !HAS_WINUI
 using Microsoft.Xaml.Behaviors;
 using System.Reflection;
 using System.Windows;
@@ -207,3 +208,4 @@ namespace Prism.Interactivity
         }
     }
 }
+#endif

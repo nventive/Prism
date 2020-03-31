@@ -1,4 +1,5 @@
-﻿using Prism.Common;
+﻿#if !HAS_WINUI
+using Prism.Common;
 using Prism.Ioc;
 using System;
 using System.ComponentModel;
@@ -131,3 +132,4 @@ namespace Prism.Services.Dialogs
         }
     }
 }
+#endif

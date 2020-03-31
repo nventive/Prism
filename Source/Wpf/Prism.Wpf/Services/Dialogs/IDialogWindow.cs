@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !HAS_WINUI
+using System;
 using System.ComponentModel;
 using System.Windows;
 
@@ -29,3 +30,4 @@ namespace Prism.Services.Dialogs
         Style Style { get; set; }
     }
 }
+#endif

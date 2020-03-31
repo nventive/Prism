@@ -1,7 +1,5 @@
 using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using Prism.Logging;
 using Prism.Modularity;
 using Prism.Regions;
@@ -9,6 +7,15 @@ using Prism.Regions.Behaviors;
 using CommonServiceLocator;
 using Prism.Mvvm;
 using Prism.Ioc;
+
+#if HAS_WINUI
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
+#else
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+#endif
 
 namespace Prism
 {
