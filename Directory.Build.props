@@ -2,18 +2,13 @@
 
   <PropertyGroup>
     <NeutralLanguage>en</NeutralLanguage>
-    <Authors>Brian Lagunas;Dan Siegel;Uno Platform</Authors>
-    <PackageProjectUrl>https://github.com/unoplatform/Uno.Prism</PackageProjectUrl>
-    <PackageIconUrl>https://nv-assets.azurewebsites.net/logos/uno.png</PackageIconUrl>
-    <RepositoryUrl>https://github.com/unoplatform/Uno.Prism</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/unoplatform/Uno.Prism/blob/master/LICENSE</PackageLicenseUrl>
     <Authors>Brian Lagunas;Dan Siegel</Authors>
     <PackageProjectUrl>https://github.com/PrismLibrary/Prism</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>prism-logo.png</PackageIcon>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/unoplatform/Uno.Prism</RepositoryUrl>
+    <RepositoryUrl>https://github.com/PrismLibrary/Prism</RepositoryUrl>
     <IncludeSymbols>True</IncludeSymbols>
     <IncludeSource>True</IncludeSource>
     <ArtifactStagingRoot>$(MSBuildThisFileDirectory)Artifacts</ArtifactStagingRoot>
@@ -92,6 +87,5 @@
     <PackageProjectUrl>https://github.com/unoplatform/Uno.Prism</PackageProjectUrl>
     <PackageIconUrl>https://nv-assets.azurewebsites.net/logos/uno.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/unoplatform/Uno.Prism</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/unoplatform/Uno.Prism/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 </Project>
