@@ -27,7 +27,7 @@ jobs:
     displayName: 'Canary Update'
     condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/canaries')
     inputs:
-      solution: Source/PrismLibrary_Uno.sln
+      solution: PrismLibrary_Uno.sln
       branchToMerge: master
       summaryFile: '$(Build.ArtifactStagingDirectory)/Canary.md'
       resultFile: '$(Build.ArtifactStagingDirectory)/result.json'
@@ -46,11 +46,11 @@ jobs:
 
   - task: MSBuild@1
     inputs:
-      solution: Source/PrismLibrary_Uno.sln
+      solution: PrismLibrary_Uno.sln
       msbuildLocationMethod: version
       msbuildVersion: latest
       msbuildArchitecture: x86
-      msbuildArguments: /r /p:Configuration=Release "/p:PackageOutputPath=$(build.artifactstagingdirectory)\nuget" "/p:RestoreConfigFile=$(Build.SourcesDirectory)/Source/NuGet.config"
+      msbuildArguments: /r /p:Configuration=Release "/p:PackageOutputPath=$(build.artifactstagingdirectory)\nuget" "/p:RestoreConfigFile=$(Build.SourcesDirectory)/src/NuGet.config"
       clean: false
       maximumCpuCount: true
       restoreNugetPackages: false
