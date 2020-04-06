@@ -27,6 +27,7 @@
     <IsCoreProject>$(MSBuildProjectName.Equals('Prism.Core'))</IsCoreProject>
     <IsTestProject>$(MSBuildProjectName.Contains('Test'))</IsTestProject>
     <IsWpfProject>$(MSBuildProjectName.Contains('Wpf'))</IsWpfProject>
+    <IsUnoProject>$(MSBuildProjectName.Contains('Uno'))</IsUnoProject>
     <IsFormsProject>$(MSBuildProjectName.Contains('Forms'))</IsFormsProject>
     <SignAssembly Condition=" ('$(IsCoreProject)' Or '$(IsWpfProject)') And !$(IsTestProject) ">True</SignAssembly>
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)prism.snk</AssemblyOriginatorKeyFile>
@@ -92,5 +93,5 @@
     <PackageIconUrl>https://nv-assets.azurewebsites.net/logos/uno.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/unoplatform/Uno.Prism</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/unoplatform/Uno.Prism/blob/master/LICENSE</PackageLicenseUrl>
-  </PropertyGroup
+  </PropertyGroup>
 </Project>

@@ -150,11 +150,11 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\Uno\Prism.DryIoc.Uno\Prism.DryIoc.Uno.csproj">
+    <ProjectReference Include="..\..\..\src\Uno\Prism.DryIoc.Uno\Prism.DryIoc.Uno.csproj">
       <Project>{b09fc94c-8100-4eb2-846c-99acb056a993}</Project>
       <Name>Prism.DryIoc.Uno</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\Uno\Prism.Uno\Prism.Uno.csproj">
+    <ProjectReference Include="..\..\..\src\Uno\Prism.Uno\Prism.Uno.csproj">
       <Project>{b2a9c972-bd7a-4a95-b62c-f8385b819900}</Project>
       <Name>Prism.Uno</Name>
     </ProjectReference>

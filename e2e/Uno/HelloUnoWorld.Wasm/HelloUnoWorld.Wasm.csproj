@@ -44,8 +44,8 @@
     <DotNetCliToolReference Include="Uno.Wasm.Bootstrap.Cli" Version="1.0.10" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\Uno\Prism.DryIoc.Uno\Prism.DryIoc.Uno.csproj" />
-    <ProjectReference Include="..\..\..\..\Source\Uno\Prism.Uno\Prism.Uno.csproj" />
+    <ProjectReference Include="..\..\..\Src\Uno\Prism.DryIoc.Uno\Prism.DryIoc.Uno.csproj" />
+    <ProjectReference Include="..\..\..\Src\Uno\Prism.Uno\Prism.Uno.csproj" />
   </ItemGroup>
   <Import Project="..\HelloUnoWorld.Shared\HelloUnoWorld.Shared.projitems" Label="Shared" Condition="Exists('..\HelloUnoWorld.Shared\HelloUnoWorld.Shared.projitems')" />
 </Project>
