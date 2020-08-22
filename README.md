@@ -14,11 +14,11 @@ This library is currently a port of the WPF feature set. If you need to get supp
 
 ## How to use Uno with Prism
 
-To start a new Uno project with Prism support, take a look at [this](https://github.com/unoplatform/Uno.Prism/tree/master/Sandbox/Uno/HelloWorld) project.  
+To start a new Uno project with Prism support, take a look at [this](https://github.com/unoplatform/uno.Prism/tree/uno/Sandbox/Windows10/HelloWorld) project.  
 
 ## Contributing to Uno.Prism
 
-The main solution to use is [PrismLibrary_Uno.sln](Source/PrismLibrary_Uno.sln) with the included samples applications.
+The main solution to use is [PrismLibrary_Uno.sln](PrismLibrary_Uno.sln) with the included samples applications.
 ### E2E Build Status
 
 # Prism
